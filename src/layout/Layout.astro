@@ -1,5 +1,5 @@
 ---
-
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -10,7 +10,8 @@
     <meta name="generator" content={Astro.generator} />
     <title>IEEE Compsoc</title>
   </head>
-  <body>
+  <body class="bg-slate-900">
     <slot />
+    <Footer />
   </body>
 </html>

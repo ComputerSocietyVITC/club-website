@@ -1,11 +1,11 @@
-import instagram from "/socialmedia/instagram.webp";
-import github from "/socialmedia/github.webp";
-import linkedin from "/socialmedia/linkedin.webp";
-import discord from "/socialmedia/discord.webp";
-import youtube from "/socialmedia/youtube.webp";
-import twitter from "/socialmedia/twitter.webp";
-import telegram from "/socialmedia/telegram.webp";
-import devto from "/socialmedia/devto.webp";
+import instagram from "/public/socialmedia/instagram.webp";
+import github from "/public/socialmedia/github.webp";
+import linkedin from "/public/socialmedia/linkedin.webp";
+import discord from "/public/socialmedia/discord.webp";
+import youtube from "/public/socialmedia/youtube.webp";
+import twitter from "/public/socialmedia/twitter.webp";
+import telegram from "/public/socialmedia/telegram.webp";
+import devto from "/public/socialmedia/devto.webp";
 
 const socialMediaLinks = [
   {
