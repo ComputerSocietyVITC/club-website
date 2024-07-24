@@ -1,6 +1,6 @@
 ---
-import BlogCard from "../components/BlogCard";
-import Footer from "../components/footer";
+import BlogCard from "../components/BlogCard.astro";
+import Footer from "../components/Footer";
 import { getSortedBlogDataInDescendingOrder } from "../data/blogdata";
 
 const sortedBlogData = getSortedBlogDataInDescendingOrder();
@@ -29,5 +29,3 @@ const sortedBlogData = getSortedBlogDataInDescendingOrder();
   </div>
 </div>
 <Footer />
-
-); }; export default Blogs;
