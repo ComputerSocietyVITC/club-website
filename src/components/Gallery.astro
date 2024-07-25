@@ -1,0 +1,30 @@
+---
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import PhotoAlbum from "react-photo-album";
+const { eventName, slides } = Astro.props;
+---
+
+<Layout>
+  <div
+    class="min-h-screen bg-transparent events-container flex flex-col items-center"
+  >
+    <div
+      class="pt-[4vh] text-white text-4xl md:text-6xl lg:text-7xl font-bold text-center pb-24"
+    >
+      {eventName.toUpperCase()}
+    </div>
+
+    <div class="block md:hidden w-full">
+      <PhotoAlbum
+        layout="columns"
+        columns={1}
+        photos={slides}
+        padding={32}
+        spacing={0}
+      />
+    </div>
+  </div>
+</Layout>
