@@ -1,12 +1,12 @@
-const bci = "/public/projects/bci.gif";
-const bonetech = "/public/projects/bonetech.gif";
-const weather = "/public/projects/weather.gif";
-const livein = "/public/projects/livein.gif";
-const falling = "/public/projects/falling.gif";
-const dochub = "/public/projects/dochub.webp";
-const opencv = "/public/projects/opencv.webp";
-const reaction = "/public/projects/reaction.webp";
-const hydro = "/public/projects/hydron.gif";
+const bci = "/projects/bci.gif";
+const bonetech = "/projects/bonetech.gif";
+const weather = "/projects/weather.gif";
+const livein = "/projects/livein.gif";
+const falling = "/projects/falling.gif";
+const dochub = "/projects/dochub.webp";
+const opencv = "/projects/opencv.webp";
+const reaction = "/projects/reaction.webp";
+const hydro = "/projects/hydron.gif";
 
 // The description here can use HTML tags for formatting, follow the React return statement syntax to achieve that
 const slides = [
