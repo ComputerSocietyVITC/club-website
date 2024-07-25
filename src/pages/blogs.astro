@@ -1,29 +1,32 @@
 ---
 import BlogCard from "../components/BlogCard.astro";
 import { getSortedBlogDataInDescendingOrder } from "../data/blogdata";
+import Layout from "../layout/Layout.astro";
 
 const sortedBlogData = getSortedBlogDataInDescendingOrder();
 ---
 
-<div
-  class="min-h-screen flex flex-col items-center scale-80 pt-32 pb-16 bg-transparent"
->
-  <div class="text-white text-7xl font-bold text-center pb-16">Blogs</div>
+<Layout>
+  <div
+    class="min-h-screen flex flex-col items-center scale-80 pt-32 pb-16 bg-transparent"
+  >
+    <div class="text-white text-7xl font-bold text-center pb-16">Blogs</div>
 
-  <div class="w-full max-w-6xl mb-16">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
-      {
-        sortedBlogData.map((blog, index) => (
-          <BlogCard
-            key={index}
-            title={blog.title}
-            date={blog.date}
-            author={blog.author}
-            imageUrl={blog.imageUrl}
-            url={blog.url}
-          />
-        ))
-      }
+    <div class="w-full max-w-6xl mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+        {
+          sortedBlogData.map((blog, index) => (
+            <BlogCard
+              key={index}
+              title={blog.title}
+              date={blog.date}
+              author={blog.author}
+              imageUrl={blog.imageUrl}
+              url={blog.url}
+            />
+          ))
+        }
+      </div>
     </div>
   </div>
-</div>
+</Layout>
