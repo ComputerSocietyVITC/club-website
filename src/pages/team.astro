@@ -1,0 +1,68 @@
+---
+import TeamCard from "../components/TeamCard.astro";
+import TeamCardBig from "../components/TeamCardBig.astro";
+import team from "../data/teamdata";
+import Layout from "../layout/Layout.astro";
+---
+
+<Layout>
+  <div class="min-h-screen scale-80 py-36 flex flex-col items-center">
+    <h1 class="text-7xl text-white font-bold text-center pb-16">Our Team</h1>
+    <div class="w-full max-w-6xl mb-16 px-14">
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-4 justify-items-center"
+      >
+        {
+          team
+            .slice(0, 2)
+            .map((teamMember, mem) => (
+              <TeamCardBig
+                key={teamMember.name}
+                name={teamMember.name}
+                designation={teamMember.designation}
+                imageUrl={teamMember.imageUrl}
+                linkUrl={teamMember.linkUrl}
+                gitUrl={teamMember.gitUrl}
+              />
+            ))
+        }
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-18 md:gap-x-20 p-4 justify-items-center"
+      >
+        {
+          team
+            .slice(2, 8)
+            .map((teamMember, mem) => (
+              <TeamCard
+                key={teamMember.name}
+                name={teamMember.name}
+                designation={teamMember.designation}
+                imageUrl={teamMember.imageUrl}
+                linkUrl={teamMember.linkUrl}
+                gitUrl={teamMember.gitUrl}
+              />
+            ))
+        }
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-4 justify-items-center"
+      >
+        {
+          team
+            .slice(8)
+            .map((teamMember, mem) => (
+              <TeamCardBig
+                key={teamMember.name}
+                name={teamMember.name}
+                designation={teamMember.designation}
+                imageUrl={teamMember.imageUrl}
+                linkUrl={teamMember.linkUrl}
+                gitUrl={teamMember.gitUrl}
+              />
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
