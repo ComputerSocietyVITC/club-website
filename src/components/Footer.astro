@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 
 <div class="w-[90vw] border mx-auto"></div>
 <div class="bg-transparent relative z-0 p-16 scale-90">
-  <footer class="font-montserrat">
+  <footer class="font-ibm">
     <div
       class="text-gray-800 hidden xl:grid xl:grid-cols-4 items-center place-items-center"
     >
@@ -28,7 +28,7 @@ import { Image } from "astro:assets";
         <div
           class="text-lg lg:text-base text-white inline-block mb-3 custom-underline-gradient"
         >
-          quick links
+          Quick Links
         </div>
         {
           routes.map((route, index) => (
@@ -46,7 +46,7 @@ import { Image } from "astro:assets";
           <div
             class="text-lg sm:self-center md:self-center lg:text-base text-white inline-block custom-underline-gradient"
           >
-            address
+            Address
           </div>
           <a
             href="https://goo.gl/maps/c9ue9jlwnbafqpke7"
@@ -54,16 +54,16 @@ import { Image } from "astro:assets";
             rel="noreferrer"
             class="my-4 grid text-white grid-rows-3"
           >
-            <section class="my-1">kelambakkam - vandalur rd,</section>
-            <section>rajan nagar, chennai,</section>
-            <section>tamil nadu - 600127.</section>
+            <section class="my-1">Kelambakkam - Vandalur Rd,</section>
+            <section>Rajan Nagar, Chennai,</section>
+            <section>Tamil Nadu - 600127.</section>
           </a>
         </div>
         <div>
           <div
             class="text-lg sm:self-center md:self-center lg:text-base text-white inline-block mb-3 custom-underline-gradient"
           >
-            email
+            Email
           </div>
           <a
             href="mailto:ieeecomputersociety@vit.ac.in"
@@ -79,14 +79,14 @@ import { Image } from "astro:assets";
         <div
           class="text-lg lg:text-base lg:text-center text-white inline-block mb-3 md:self-center sm:self-center custom-underline-gradient"
         >
-          social media
+          Social Media
         </div>
         <div class="grid grid-cols-4 place-items-center">
           {
             socialMediaLinks.map((link, index) => (
               <div>
                 <a href={link.url} target="_blank" rel="noreferrer">
-                  <Image src={link.icon} alt={link.platform} class="h-7 my-5" />
+                  <Image src={link.icon} alt={link.platform} class="h-8 w-auto my-5" />
                 </a>
               </div>
             ))
@@ -113,7 +113,7 @@ import { Image } from "astro:assets";
           <div
             class="text-lg lg:text-base text-white mb-3 custom-underline-gradient"
           >
-            quick links
+            Quick Links
           </div>
           {
             routes.map((route, index) => (
@@ -131,7 +131,7 @@ import { Image } from "astro:assets";
             <div
               class="text-lg lg:text-base text-white mb-3 custom-underline-gradient"
             >
-              address
+              Address
             </div>
             <a
               href="https://goo.gl/maps/c9ue9jlwnbafqpke7"
@@ -139,16 +139,16 @@ import { Image } from "astro:assets";
               rel="noreferrer"
               class="my-3 block text-white hover:text-gray-200 text-base lg:text-sm"
             >
-              <section>kelambakkam - vandalur rd,</section>
-              <section>rajan nagar, chennai,</section>
-              <section>tamil nadu - 600127.</section>
+              <section>KELAMBAKKAM - VANDALUR RD,</section>
+              <section>RAJAN NAGAR, CHENNAI,</section>
+              <section>TAMIL NADU - 600127.</section>
             </a>
           </div>
           <div>
             <div
               class="text-lg lg:text-base text-white mb-3 custom-underline-gradient"
             >
-              email
+              Email
             </div>
             <a
               href="mailto:ieeecomputersociety@vit.ac.in"
@@ -164,7 +164,7 @@ import { Image } from "astro:assets";
           <div
             class="text-lg lg:text-base text-center text-white mb-3 custom-underline-gradient"
           >
-            social media
+            Social Media
           </div>
           <div class="grid grid-cols-4 place-items-center">
             {
@@ -174,7 +174,7 @@ import { Image } from "astro:assets";
                     <Image
                       src={link.icon}
                       alt={link.platform}
-                      class="h-7 my-5 mx-auto lg:mx-0"
+                      class="h-7 my-5 w-auto lg:mx-0"
                     />
                   </a>
                 </div>
@@ -203,7 +203,7 @@ import { Image } from "astro:assets";
       >
         <div class="text-center my-4">
           <div class="text-lg text-white mb-3 custom-underline-gradient">
-            address
+            Address
           </div>
           <a
             href="https://goo.gl/maps/c9ue9jlwnbafqpke7"
@@ -211,14 +211,14 @@ import { Image } from "astro:assets";
             rel="noreferrer"
             class="text-white hover:text-gray-200 text-base"
           >
-            <section>kelambakkam - vandalur rd,</section>
-            <section>rajan nagar, chennai,</section>
-            <section>tamil nadu - 600127.</section>
+            <section>KELAMBAKKAM - VANDALUR RD,</section>
+            <section>RAJAN NAGAR, CHENNAI,</section>
+            <section>TAMIL NADU - 600127.</section>
           </a>
         </div>
         <div class="text-center my-4">
           <div class="text-lg text-white mb-3 custom-underline-gradient">
-            email
+            Email
           </div>
           <a
             href="mailto:ieeecomputersociety@vit.ac.in"
@@ -232,14 +232,14 @@ import { Image } from "astro:assets";
       </div>
       <div class="flex flex-col items-center mt-4">
         <div class="text-lg text-white mb-3 custom-underline-gradient">
-          social media
+          Social Media
         </div>
         <div class="flex justify-around flex-wrap gap-4 w-full">
           {
             socialMediaLinks.map((link, index) => (
               <div class="px-6 flex justify-center">
                 <a href={link.url} target="_blank" rel="noreferrer">
-                  <Image src={link.icon} alt={link.platform} class="h-7 my-5" />
+                  <Image src={link.icon} alt={link.platform} class="h-7 w-auto my-5" />
                 </a>
               </div>
             ))
@@ -249,3 +249,27 @@ import { Image } from "astro:assets";
     </div>
   </footer>
 </div>
+
+<style>
+
+.custom-underline-gradient {
+  display: inline-block;
+  position: relative;
+}
+
+.custom-underline-gradient::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background: linear-gradient(to right, #055A98, #6CEDFF);
+  position: absolute;
+  bottom: -2px; /* Adjust the distance from the text */
+  left: 0;
+}
+.font-ibm{
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
