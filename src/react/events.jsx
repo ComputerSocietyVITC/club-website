@@ -5,7 +5,6 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
-import { useNavigate } from "react-router-dom";
 import { eventData, eventOrder } from "../data/eventsdata";
 
 const importAll = (r) => {
