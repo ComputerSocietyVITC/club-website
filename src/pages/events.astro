@@ -1,0 +1,164 @@
+---
+// Import the required components
+import Layout from "../layout/Layout.astro";
+import { eventData } from "../data/eventsdata";
+---
+
+<!--
+
+<Layout>
+  <div
+    class="relative min-h-screen bg-transparent flex flex-col items-center justify-center"
+  >
+    <div>
+      <div class="text-white text-7xl font-bold text-center pt-32">Events</div>
+      <div class="min-[768px]:hidden block w-full max-w-6xl px-8">
+        {
+          slides.map((slide, index) => (
+            <div key={index} class="my-16">
+              <div class="flex justify-center">
+                <img
+                  src={eventData[slide.eventName]?.imageUrl || slide.src}
+                  alt={slide.eventName}
+                  class="w-auto h-auto rounded-xl object-full my-8"
+                  onClick={() => handleNavigateToGallery(slide.eventName)}
+                />
+              </div>
+              <div class="rounded-[24px] p-0.5 bg-gradient-to-b flex justify-center from-b_col3 to-b_col4 w-auto h-auto shadow-2xl shadow-[#7ac4ec]/30 mt-4">
+                <div class="rounded-[calc(24px-1px)] p-8 bg-gradient-to-b w-full from-[#061b24] from-2% via-[#072031] to-[#000b11] to-9% h-full flex flex-col justify-between text-center text-white max-w-[700px]">
+                  <h2 class="text-[4vw] text-b_col3 font-semibold mb-2">
+                    {eventData[slide.eventName]?.title}
+                  </h2>
+                  <p class="text-[2.5vw]">
+                    {eventData[slide.eventName]?.description}
+                  </p>
+                  <div class="pt-6">
+                    <button
+                      class="border-2 border-solid border-teal-500 p-3 rounded-full bg-gradient-to-r from-b_col1 to-b_col2"
+                      onClick={() => handleNavigateToGallery()}
+                    >
+                      <span class="text-teal-500 font-light text-lg">
+                        View Gallery &gt;
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="min-[768px]:block hidden">
+      <section
+        class="min-h-screen text-white grid grid-cols-1 place-items-center"
+      >
+        <div class="w-full px-6">
+          <div class="text-7xl font-bold text-center mt-16 mb-8">Events</div>
+          <Swiper
+            modules={[Navigation]}
+            navigation
+            spaceBetween={50}
+            slidesPerView={1}
+            speed={600}
+            onSlideChange={handleSlideChange}
+            loop={true}
+          >
+            {
+              slides.map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <div class="grid grid-cols-1 xl:grid-cols-2 mx-20 gap-4 items-center place-items-center py-8">
+                    <img
+                      src={eventData[slide.eventName]?.imageUrl || slide.src}
+                      alt={slide.eventName}
+                      class="w-auto max-h-[450px] object-cover rounded-xl shadow-2xl shadow-[#7ac4ec]/30"
+                      onClick={() => handleNavigateToGallery(slide.eventName)}
+                    />
+                    <div class="rounded-[36px] p-0.5 bg-gradient-to-b flex justify-center from-b_col3 to-b_col4 h-auto lg:w-[500px] shadow-2xl shadow-[#7ac4ec]/30">
+                      <div class="rounded-[calc(36px-1px)] p-12 h-auto bg-gradient-to-b w-full from-[#061b24] via-[#072031] to-[#000b11] flex flex-col text-center text-white max-w-[559px]">
+                        <h2 class="text-[4vh] lg:text-[4vh] xl:text-[5vh] text-b_col3 font-semibold mb-4">
+                          {eventData[slide.eventName]?.title}
+                        </h2>
+                        <p class="text-[1.6vh] lg:text-[1.75vh] xl:text-[2vh]">
+                          {eventData[slide.eventName]?.description}
+                        </p>
+                        <div class="pt-8 flex justify-center">
+                          <button
+                            class="border-2 border-solid border-teal-500 p-4 rounded-full bg-gradient-to-r from-b_col1 to-b_col2"
+                            onClick={() =>
+                              handleNavigateToGallery(slide.eventName)
+                            }
+                          >
+                            <span class="text-teal-500 font-light text-lg">
+                              View Gallery &gt;
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))
+            }
+          </Swiper>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout> -->
+<Layout>
+  <div
+    class="relative min-h-screen bg-transparent flex flex-col items-center justify-center"
+  >
+    <div class="phone">
+      <div class="text-white text-7xl font-bold text-center pt-32">Events</div>
+      <div class="w-full max-w-6xl px-8">
+        {
+          Object.keys(eventData).map((eventName, index) => (
+            <div class="my-16">eventName</div>
+          ))
+        }
+      </div>
+    </div>
+    <div class="desktop">
+      <section
+        class="min-h-screen text-white grid grid-cols-1 place-items-center"
+      >
+        <div class="w-full px-6">
+          <div class="text-7xl font-bold text-center mt-16 mb-8">Events</div>
+          <div class="w-full max-w-6xl px-8">
+            {
+              Object.keys(eventData).map((eventName, index) => (
+                <div class="my-16">
+                  <a href={eventData[eventName].galleryLink}>
+                    {eventData[eventName].title}
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  @media (min-width: 768px) {
+    .phone {
+      display: none;
+    }
+    .desktop {
+      display: block;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .phone {
+      display: block;
+    }
+    .desktop {
+      display: none;
+    }
+  }
+</style>
