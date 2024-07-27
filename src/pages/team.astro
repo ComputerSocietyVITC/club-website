@@ -1,4 +1,5 @@
 ---
+import {useState} from "react";
 import TeamCard from "../components/TeamCard.astro";
 import TeamCardBig from "../components/TeamCardBig.astro";
 import team from "../data/teamdata";
@@ -10,11 +11,11 @@ import Layout from "../layout/Layout.astro";
     <h1 class="text-7xl text-white font-bold text-center pb-16">Our Team</h1>
     <div class="w-full max-w-screen-2xl mb-16 px-14">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-18 md:gap-x-20 p-4 justify-items-center"
+        id="team1" class="team-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-18 md:gap-x-20 p-4 justify-items-center"
       >
         {
           team
-            .slice(0)
+            .slice(0,4)
             .map((teamMember, mem) => (
               <TeamCardBig
                 key={teamMember.name}
@@ -26,7 +27,141 @@ import Layout from "../layout/Layout.astro";
               />
             ))
         }
-      </div>
+            </div>
+<div id="team2"
+        class="team-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-18 md:gap-x-20 p-4 justify-items-center"
+      >
+        {
+          team
+            .slice(4,8)
+            .map((teamMember, mem) => (
+              <TeamCardBig
+                key={teamMember.name}
+                name={teamMember.name}
+                designation={teamMember.designation}
+                imageUrl={teamMember.imageUrl}
+                linkUrl={teamMember.linkUrl}
+                gitUrl={teamMember.gitUrl}
+              />
+            ))
+        }
+            </div>
+<div id="team3"
+        class="team-row grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-18 md:gap-x-20 p-4 justify-items-center"
+      >
+        {
+          team
+            .slice(8)
+            .map((teamMember, mem) => (
+              <TeamCardBig
+                key={teamMember.name}
+                name={teamMember.name}
+                designation={teamMember.designation}
+                imageUrl={teamMember.imageUrl}
+                linkUrl={teamMember.linkUrl}
+                gitUrl={teamMember.gitUrl}
+              />
+            ))
+        }
+            </div>
+</div> 
+            <div class="w-96 h-20 bg-white/10 rounded-3xl backdrop-blur-md" />
+            <h2>Members List</h2>
+</div>
     </div>
+<button id="up-arrow" class="absolute right-4 text-white bg-gray-800 p-4 rounded-full hidden">▲</button>
+    <button id="down-arrow" class="absolute right-4 text-white bg-gray-800 p-4 rounded-full">▼</button>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const rows = document.querySelectorAll('.team-row');
+      let currentIndex = 0;
+
+      const upArrow = document.getElementById('up-arrow');
+      const downArrow = document.getElementById('down-arrow');
+
+      function updateArrows() {
+        if (currentIndex === 0) {
+          upArrow.classList.add('hidden');
+        } else {
+          upArrow.classList.remove('hidden');
+        }
+        if (currentIndex === rows.length - 1) {
+          downArrow.classList.add('hidden');
+        } else {
+          downArrow.classList.remove('hidden');
+        }
+      }
+
+      function highlightRow(index) {
+        rows.forEach((row, i) => {
+          if (i === index) {
+            row.classList.add('highlight');
+            row.classList.remove('dim');
+          } else {
+            row.classList.remove('highlight');
+            row.classList.add('dim');
+          }
+        });
+      }
+
+      upArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+          highlightRow(currentIndex);
+          updateArrows();
+        }
+      });
+
+      downArrow.addEventListener('click', () => {
+        if (currentIndex < rows.length - 1) {
+          currentIndex += 1;
+          highlightRow(currentIndex);
+          updateArrows();
+        }
+      });
+
+      // Initial state
+      highlightRow(currentIndex);
+      updateArrows();
+    });
+  </script>
+
+  <style>
+    .arrow-button {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .arrow-button:hover {
+      background-color: #444;
+    }
+
+    .highlight {
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .dim {
+      opacity: 0.3;
+      transition: opacity 0.3s ease;
+    }
+
+    #up-arrow {
+      top: 80%;
+      transform: translateY(-50%);
+    }
+
+    #down-arrow {
+      top: 90%;
+      transform: translateY(50%);
+    }
+  </style>
 </Layout>
