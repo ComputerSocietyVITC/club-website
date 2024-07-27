@@ -64,13 +64,16 @@ import Layout from "../layout/Layout.astro";
             ))
         }
             </div>
-</div> 
-            <div class="w-96 h-20 bg-white/10 rounded-3xl backdrop-blur-md" />
-            <h2>Members List</h2>
-</div>
+        </div>
+<a href="/members">
+            <div class="w-96 h-20 bg-white/10 rounded-3xl backdrop-blur-md hover:bg-blue-950 transition-all transition-duration-300 flex flex-row items-center justify-center font">
+<img src="/images/team/people.png" class="w-16 h-16 mr-6" />
+      <h2 class="text-white text-xl">Members List</h2>
+            </div>
+        </a>
     </div>
-<button id="up-arrow" class="absolute right-4 text-white bg-gray-800 p-4 rounded-full hidden">▲</button>
-    <button id="down-arrow" class="absolute right-4 text-white bg-gray-800 p-4 rounded-full">▼</button>
+<button id="up-arrow" class="arrow-button absolute right-16 text-white bg-gray-800 py-2 rounded-full">▲</button>
+    <button id="down-arrow" class="arrow-button absolute right-16 text-white bg-gray-800 py-2 rounded-full">▼</button>
   </div>
 
   <script>
@@ -81,24 +84,14 @@ import Layout from "../layout/Layout.astro";
       const upArrow = document.getElementById('up-arrow');
       const downArrow = document.getElementById('down-arrow');
 
-      function updateArrows() {
-        if (currentIndex === 0) {
-          upArrow.classList.add('hidden');
-        } else {
-          upArrow.classList.remove('hidden');
-        }
-        if (currentIndex === rows.length - 1) {
-          downArrow.classList.add('hidden');
-        } else {
-          downArrow.classList.remove('hidden');
-        }
-      }
 
       function highlightRow(index) {
         rows.forEach((row, i) => {
           if (i === index) {
             row.classList.add('highlight');
-            row.classList.remove('dim');
+                    row.classList.remove('dim');
+
+            row.scrollIntoView({ behavior: 'smooth', block: 'center' });
           } else {
             row.classList.remove('highlight');
             row.classList.add('dim');
@@ -110,7 +103,6 @@ import Layout from "../layout/Layout.astro";
         if (currentIndex > 0) {
           currentIndex -= 1;
           highlightRow(currentIndex);
-          updateArrows();
         }
       });
 
@@ -118,28 +110,26 @@ import Layout from "../layout/Layout.astro";
         if (currentIndex < rows.length - 1) {
           currentIndex += 1;
           highlightRow(currentIndex);
-          updateArrows();
         }
       });
 
       // Initial state
       highlightRow(currentIndex);
-      updateArrows();
     });
   </script>
 
   <style>
     .arrow-button {
-      width: 48px;
-      height: 48px;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 32px;
       cursor: pointer;
       transition: opacity 0.3s ease;
     }
-
+    
     .arrow-button:hover {
       background-color: #444;
     }
@@ -155,12 +145,12 @@ import Layout from "../layout/Layout.astro";
     }
 
     #up-arrow {
-      top: 80%;
+        top: 102%;
       transform: translateY(-50%);
     }
 
     #down-arrow {
-      top: 90%;
+      top: 104%;
       transform: translateY(50%);
     }
   </style>
