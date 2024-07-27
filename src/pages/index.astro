@@ -1,9 +1,8 @@
 ---
 import Layout from "../layout/Layout.astro";
 import Accordion from "../components/Accordion";
-import { items } from "../data/homeData.jsx";
 ---
 
 <Layout>
-  <Accordion items={items} client:load />
+    <Accordion client:load/>
 </Layout>
