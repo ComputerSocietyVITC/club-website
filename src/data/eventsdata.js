@@ -120,7 +120,7 @@ export const eventData = {
     description:
       "Club Expo is an annual event where all the clubs of VIT showcase their work and achievements. IEEE Computer Society VIT Chennai actively participates in this event and showcases its projects and initiatives.",
     imageUrl: expo,
-    galleryLink: "/gallery/expo"
+    galleryLink: "/gallery/clubexpo"
   },
   carnival: {
     title: "Tech Carnival",
