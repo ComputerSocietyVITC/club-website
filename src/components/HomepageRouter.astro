@@ -1,0 +1,25 @@
+---
+import { routes } from "../data/routes";
+
+const routeIcons = {
+  "Team": "/icons/team.svg",
+  "Events": "/icons/events.svg",
+  "Projects": "/icons/project.svg",
+  "Blogs": "/icons/blog.svg",
+};
+
+const filteredRoutes = routes.filter(route => route.title.toLowerCase() !== 'home');
+---
+
+<main class="flex flex-wrap justify-center space-x-6 space-y-6 p-4 sm:space-x-4 sm:space-y-4 md:space-x-6 md:space-y-0 lg:space-x-8 lg:space-y-0 m-10">
+  {filteredRoutes.map((route, index) => {
+    return (
+      <a href={route.href} key={index} class="group flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 p-4 rounded-3xl bg-gray-800 px-6 hover:bg-[#2a2a2a]/50 transition duration-200 ease-in-out w-full sm:w-auto">
+        <div class="flex items-center justify-center w-8 h-8 rounded-full transition duration-200 ease-in-out">
+          <img src={routeIcons[route.title]} alt={route.title} class="w-6 h-6"/>
+        </div>
+        <span class="text-white text-lg transition duration-200 ease-in-out text-center sm:text-left">{route.title}</span>
+      </a>
+    );
+  })}
+</main>
