@@ -37,7 +37,7 @@ const EventsSlider = () => {
                     <h2 className="text-[5vw] text-b_col3 font-semibold mb-2">
                       {eventData[eventName].title}
                     </h2>
-                    <p className="text-[2.5vw]">{eventData[eventName].description}</p>
+                    <p className="text-[2.5vw] sans-font">{eventData[eventName].description}</p>
                     <div className="pt-10 pb-8">
                             <a className="border-2 border-solid border-teal-500 p-4 rounded-full bg-gradient-to-r from-b_col1 to-b_col2 cursor-pointer" href={eventData[eventName].galleryLink}>
                                 <span className="text-teal-500 font-light text-lg cursor-pointer">
@@ -79,7 +79,7 @@ const EventsSlider = () => {
                         <h2 className="text-[1vw] md:text-[3vw] lg:text-[2vw] xl:text-[2.25vw] text-b_col3 font-semibold mb-4">
                           {eventData[eventName].title}
                         </h2>
-                        <p className="text-[1.5vh] md:text-[1.6vh] lg:text-[1.75vh] xl:text-[2vh]">
+                        <p className="text-[1.5vh] md:text-[1.6vh] lg:text-[1.75vh] xl:text-[2vh] sans-font">
                           {eventData[eventName].description}
                         </p>
                         <div className="pt-10">
