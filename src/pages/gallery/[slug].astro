@@ -1,23 +1,13 @@
 ---
 import { eventData } from "../../data/eventsdata";
 import Layout from "../../layout/Layout.astro";
+import Album from "../../react/Album";
 
 export function getStaticPaths() {
   const paths = Object.keys(eventData).map((slug) => ({ params: { slug } }));
   console.log(paths);
   return paths;
 }
-
-// export function getStaticPaths() {
-//   const paths = Object.keys(eventData).map((slug) => ({ params: { slug } }));
-//   return paths; // Updated to match Astro's API
-// }
-
-// export async function getStaticProps({ params }) {
-//   const { slug } = params;
-//   const slides = getGallery();
-//   return { props: { slug, slides } };
-// }
 
 const { slug } = Astro.params;
 ---
@@ -26,11 +16,5 @@ const { slug } = Astro.params;
   <h1 class="text-[5rem] text-white font-bold text-center my-16">
     {eventData[slug].title}
   </h1>
-  <!-- <PhotoAlbum
-    layout="columns"
-    columns={1}
-    photos={slides.map((src) => ({ src }))}
-    padding={32}
-    spacing={0}
-  /> -->
+  <Album slug={slug} client:load />
 </Layout>
