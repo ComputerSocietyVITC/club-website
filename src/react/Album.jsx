@@ -3,6 +3,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "../css/Album.css";
 
 const Album = ({ slug }) => {
   const [images, setImages] = useState([]);
