@@ -1,35 +1,45 @@
-# Astro Starter Kit: Minimal
+This repository holds the IEEE CS VIT Chennai website. The website is built using Astro, a static site generator.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Project Structure
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+The project is structured in the following manner:
 
 ```text
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/
+│   ├── components/
+│   ├── data/
+│   ├── layout/
+│   ├── pages/
+│   └── react/
+├── .gitignore
+├── astro.config.mjs
+├── package-lock.json
+├── package.json
+└── tailwind.config.mjs
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+The public directory is where you can place static assets like images, fonts, and other files that you want to be copied as-is when building your site.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+The src directory is where you'll spend most of your time. It contains all of the components, pages, and styles that make up your site.
 
-Any static assets, like images, can be placed in the `public/` directory.
+In this project, we have the following directories and files:
 
-## 🧞 Commands
+- `assets/`: Contains all the assets like images, etc.
+- `components/`: Contains all the components that are used in the website written in Astro.
+- `data/`: Contains all the data that is used in the website in JavaScript and TypeScript, which is done for modularity.
+- `layout/`: Contains the base layout of the website which is used in all the pages.
+- `pages/`: Contains all the pages of the website.
+- `react/`: Contains all the components that are written in React.
+- `.gitignore`: Specifies intentionally untracked files to ignore.
+- `astro.config.mjs`: Contains the configuration for the Astro project.
+- `package-lock.json`: Contains the exact version of the dependencies that are installed.
+- `package.json`: Contains the metadata for the project.
+- `tailwind.config.mjs`: Contains the configuration for Tailwind CSS.
+
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -42,6 +52,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Further Documentation
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+More documentation about the components and files are included in the respective files. You can also refer to the [Astro documentation](https://docs.astro.build) for more information.
