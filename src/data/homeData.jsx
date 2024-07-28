@@ -38,7 +38,7 @@ export const items = [
           type="email"
           className="border-2 border-teal-300/[0.8] bg-gradient-to-r from-[#123838]  to-[#0C2B38] rounded-lg mt-12 mb-3  text-md px-2 py-1 w-full text-center "
         />
-        <button className="hover:scale-110 duration-200 transition border-2 border-cyan-100/[0.6] bg-gradient-to-r from-[#123838]  to-[#0C2B38] rounded-2xl my-4 text-xl px-4 p-2 text-center text-blue-100/[0.8]">
+        <button className="hover:scale-105 duration-200 transition border-2 border-cyan-100/[0.6] bg-gradient-to-r from-[#123838]  to-[#0C2B38] rounded-2xl my-4 text-xl px-4 p-2 text-center text-blue-100/[0.8]">
           Subscribe
         </button>
       </div>
@@ -48,7 +48,7 @@ export const items = [
     header: "CONTACT",
     content: (
       <div className="contact-content">
-        <div className="flex flex-col">
+        <div className="items-center items-center flex flex-col">
           <div className="text-lg sm:self-center md:self-center lg:text-base text-blue-200 inline-block mb-3 font-bold">
             Email
           </div>
@@ -56,7 +56,7 @@ export const items = [
             href="mailto:ieeecomputersociety@vit.ac.in"
             target="_blank"
             rel="noreferrer"
-            className="my-3 block text-white hover:text-white/[0.8] text-base lg:text-lg lg:text-left hover:scale-125 transition duration-200"
+            className="text-center my-3 block text-white hover:text-white/[0.8] text-base lg:text-lg lg:text-left transition duration-200"
           >
             ieeecomputersociety@vit.ac.in
           </a>
