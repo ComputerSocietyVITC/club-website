@@ -3,6 +3,8 @@ import { eventData } from "../../data/eventsdata";
 import Layout from "../../layout/Layout.astro";
 import Album from "../../react/Album";
 
+type EventDataKey = keyof typeof eventData;
+
 export function getStaticPaths() {
   const paths = Object.keys(eventData).map((slug) => ({ params: { slug } }));
   console.log(paths);
