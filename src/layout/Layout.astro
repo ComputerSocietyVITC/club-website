@@ -30,6 +30,15 @@ import Footer from "../components/Footer.astro";
     cursor: url("../assets/cursor.svg"), auto;
   }
 
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
   .monospace-font {
     font-family: "IBM Plex Mono", monospace !important;
   }

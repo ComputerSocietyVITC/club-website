@@ -10,11 +10,12 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
+const typedSlug = slug as keyof typeof eventData;
 ---
 
 <Layout>
   <h1 class="text-[5rem] text-white font-bold text-center my-16">
-    {eventData[slug].title}
+    {eventData[typedSlug].title}
   </h1>
-  <Album slug={slug} client:load />
+  <Album slug={typedSlug} client:load />
 </Layout>
