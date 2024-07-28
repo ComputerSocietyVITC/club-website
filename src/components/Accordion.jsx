@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-//import '../css/Accordion.css'
 
 const Accordion = ({ items }) => {
   const [accord, setActiveAccord] = useState(-1);
