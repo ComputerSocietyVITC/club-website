@@ -1,4 +1,4 @@
-import socialMediaLinks from "./socialMediaLinks";
+import accordionLinks from "./accordionLinks";
 
 // The content here can use HTML tags for formatting, follow the React return statement syntax to achieve that
 export const items = [
@@ -48,7 +48,7 @@ export const items = [
     header: "CONTACT",
     content: (
       <div className="contact-content">
-        <div className="items-center items-center flex flex-col">
+        <div className="items-center flex flex-col">
           <div className="text-lg sm:self-center md:self-center lg:text-base text-blue-200 inline-block mb-3 font-bold">
             Email
           </div>
@@ -66,7 +66,7 @@ export const items = [
             Social Media
           </div>
           <div className="grid grid-cols-4 place-items-center">
-            {socialMediaLinks.map((link, index) => (
+            {accordionLinks.map((link, index) => (
               <div
                 key={index}
                 className="hover:scale-150 transition duration-200"
@@ -75,7 +75,7 @@ export const items = [
                   <img
                     src={link.icon}
                     alt={link.platform}
-                    className="h-7 my-5 "
+                    className="h-7 my-5"
                   />
                 </a>
               </div>

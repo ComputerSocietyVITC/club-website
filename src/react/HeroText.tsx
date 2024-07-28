@@ -11,16 +11,16 @@ const AnimatedSection = ({
   className: string;
 }) => {
   const { ref, inView } = useInView({
-    triggerOnce: true, // Trigger animation only once
-    threshold: 0.3, // Trigger when 50% of the element is in view
+    triggerOnce: true,
+    threshold: 0.3,
   });
 
   return (
     <motion.section
       className={className}
       ref={ref}
-      initial={{ opacity: 0, y: 40 }} // Start from opacity 0 and 10 pixels above
-      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }} // Animate to opacity 1 and natural position
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: inView ? 1 : 0, y: inView ? 0 : 20 }}
       transition={{ duration: 0.5, delay: delay }}
     >
       {children}
@@ -30,7 +30,7 @@ const AnimatedSection = ({
 
 const HeroText = () => {
   return (
-    <section className="flex flex-col justify-center items-center gap-10 text-[6vh] mb-[25vh]">
+    <section className="flex flex-col justify-center items-center gap-10 text-[6vh] mb-[25vh] p-8">
       <AnimatedSection delay={0.5} className="">
         We are
       </AnimatedSection>
@@ -40,36 +40,36 @@ const HeroText = () => {
       <AnimatedSection delay={1.5} className="">
         VIT Chennai
       </AnimatedSection>
-      <section className="text-white font-light grid text-[3vh] lg:grid-cols-5 sm:grid-rows-3 md:grid-rows-3 text-left lg:text-center sm:place-items-start place-items-center px-6 content-center pt-[10vh]">
-        <section className="flex h-full w-full ">
+      <section className="text-white font-light grid text-[3vh] lg:grid-cols-5 sm:grid-rows-3 md:grid-rows-3 text-center lg:text-center sm:place-items-center place-items-center px-6 content-center pt-[10vh]">
+        <section className="flex h-full w-full justify-center items-center">
           <section className="lg:hidden">|</section>
           <AnimatedSection delay={0.5} className="">
             DISCOVER
           </AnimatedSection>
         </section>
         <motion.section
-          initial={{ x: 500, opacity: 0 }} // Start position (off-screen to the right if positive)
-          animate={{ x: 0, opacity: 1 }} // End position (back to its original position)
-          transition={{ duration: 1 }} // Duration of the animation in seconds
-          className="hidden lg:block"
+          initial={{ x: 500, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1 }}
+          className="hidden lg:flex justify-center items-center"
         >
           |
         </motion.section>
-        <section className="flex ">
-          <section className="lg:hidden ">|</section>
+        <section className="flex h-full w-full justify-center items-center">
+          <section className="lg:hidden">|</section>
           <AnimatedSection delay={1} className="">
             DEVELOP
           </AnimatedSection>
         </section>
         <motion.section
-          initial={{ x: -500, opacity: 0 }} // Start position (off-screen to the right if positive)
-          animate={{ x: 0, opacity: 1 }} // End position (back to its original position)
+          initial={{ x: -500, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
-          className=" hidden lg:block"
+          className="hidden lg:flex justify-center items-center"
         >
           |
         </motion.section>
-        <section className="flex ">
+        <section className="flex h-full w-full justify-center items-center">
           <section className="lg:hidden">|</section>
           <AnimatedSection delay={1.5} className="">
             DEPLOY
@@ -79,4 +79,5 @@ const HeroText = () => {
     </section>
   );
 };
+
 export default HeroText;

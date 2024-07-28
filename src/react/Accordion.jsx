@@ -10,12 +10,12 @@ const Accordion = () => {
 
   return (
     <div className="flex justify-center w-full">
-      <div className="text-white flex flex-col items-center w-full max-w-3xl">
+      <div className="text-white flex flex-col items-center w-full max-w-3xl mx-8">
         {items.map((item, index) => {
           return (
             <div
               key={index}
-              className="m-5 bg-opacity-50 bg-gradient-to-r from-[#147199] to-[#55E0E0] mb-4 rounded-3xl cursor-pointer w-full overflow-hidden border-2 border-teal-300/[0.8] bg-gradient-to-r from-[#123838] to-[#0CB38]"
+              className="m-5 bg-opacity-50 mb-4 rounded-3xl cursor-pointer w-full overflow-hidden border-2 border-teal-300/[0.8] bg-gradient-to-r from-[#123838] to-[#0CB38]"
             >
               <div
                 className="flex justify-between items-center px-6 py-4 bg-[#1a2e35]/90 focus:outline-none"
@@ -28,7 +28,7 @@ const Accordion = () => {
                   }
                 }}
               >
-                <h3 className="font-bold text-xl uppercase tracking-wide">
+                <h3 className="font-bold text-xl uppercase tracking-wide monospace-font">
                   {item.header}
                 </h3>
                 <div className="rounded-full p-1">

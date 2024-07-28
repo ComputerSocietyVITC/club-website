@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
-    <header className={`w-screen text-white z-50 bg-transparent`}>
+    <header className="w-screen text-white z-50 bg-transparent">
       {isOpen && (
         <section
           onClick={handleClick}
@@ -83,12 +83,12 @@ const NavBar: React.FC = () => {
           </button>
         </nav>
         <nav className="hidden xl:block flex-1">
-          <ul className="flex justify-end text-slate-300 my-1 font-regular font-montserrat text-xl">
+          <ul className="flex justify-end text-slate-300 my-1 text-xl">
             {footerLinks.map((route: Route, index: number) => (
               <li key={index}>
                 <a
                   href={route.href}
-                  className={`custom-underline hover:text-white mx-6`}
+                  className="hover:text-white mx-6 font-medium"
                 >
                   {route.title}
                 </a>
