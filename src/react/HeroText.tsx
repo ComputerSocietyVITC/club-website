@@ -34,10 +34,10 @@ const HeroText = () => {
       <AnimatedSection delay={0.5} className="">
         We are
       </AnimatedSection>
-      <AnimatedSection delay={1} className="">
+      <AnimatedSection delay={1} className="leading-tight">
         IEEE Computer Society
       </AnimatedSection>
-      <AnimatedSection delay={1.5} className="">
+      <AnimatedSection delay={1.5} className="leading-none">
         VIT Chennai
       </AnimatedSection>
       <section className="text-white font-light grid text-[3vh] lg:grid-cols-5 sm:grid-rows-3 md:grid-rows-3 text-center lg:text-center sm:place-items-center place-items-center px-6 content-center pt-[10vh]">
