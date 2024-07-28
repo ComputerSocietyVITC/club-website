@@ -74,7 +74,7 @@ import Layout from "../layout/Layout.astro";
     const rows = document.querySelectorAll(".team-row");
     let currentIndex = 0;
 
-    function highlightRow(index:number) {
+    function highlightRow(index: number) {
       rows.forEach((row, i) => {
         if (i === index) {
           row.classList.add("highlight");

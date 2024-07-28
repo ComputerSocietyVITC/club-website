@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { items } from "../data/homeData";
 
 const Accordion = () => {
@@ -33,7 +33,7 @@ const Accordion = () => {
                 </h3>
                 <div className="rounded-full p-1">
                   <img
-                    src={"/public/chevrondown.svg"}
+                    src={"/chevrondown.svg"}
                     alt="arrow"
                     className={`select-none w-6 h-6 transition-transform duration-300 ${
                       accord === index ? "rotate-180" : ""

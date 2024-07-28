@@ -3,7 +3,6 @@ import { eventData } from "../../data/eventsdata";
 import Layout from "../../layout/Layout.astro";
 import Album from "../../react/Album";
 
-
 type EventDataKey = keyof typeof eventData;
 
 export function getStaticPaths() {
@@ -13,12 +12,12 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.params;
-const eventSlug = slug as EventDataKey;
+const typedSlug = slug as keyof typeof eventData;
 ---
 
 <Layout>
   <h1 class="text-[5rem] text-white font-bold text-center my-16">
-    {eventData[eventSlug].title}
+    {eventData[typedSlug].title}
   </h1>
-  <Album slug={slug} client:load />
+  <Album slug={typedSlug} client:load />
 </Layout>

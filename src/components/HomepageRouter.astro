@@ -11,6 +11,8 @@ const routeIcons: Record<'Team' | 'Events' | 'Projects' | 'Blogs', string> = {
 const filteredRoutes = routes.filter(
   (route) => route.title.toLowerCase() !== "home"
 );
+
+type RouteIconKeys = keyof typeof routeIcons;
 ---
 
 <main class="flex flex-wrap justify-center p-4 m-10">
@@ -23,7 +25,7 @@ const filteredRoutes = routes.filter(
         >
           <div class="flex items-center justify-center w-8 h-8 rounded-full transition duration-200 ease-in-out">
             <img
-              src={routeIcons[route.title]}
+              src={routeIcons[route.title as RouteIconKeys]}
               alt={route.title}
               class="w-6 h-6"
             />
