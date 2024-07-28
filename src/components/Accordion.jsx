@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { items } from "../data/homeData";
 
 const Accordion = ({ items }) => {
   const [accord, setActiveAccord] = useState(-1);
