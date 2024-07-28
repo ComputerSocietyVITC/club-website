@@ -1,5 +1,5 @@
 ---
-import TeamCardBig from "../components/TeamCardBig.astro";
+import TeamCard from "../components/TeamCard.astro";
 import team from "../data/teamdata";
 import Layout from "../layout/Layout.astro";
 ---
@@ -16,7 +16,7 @@ import Layout from "../layout/Layout.astro";
           team
             .slice(0, 4)
             .map((teamMember, mem) => (
-              <TeamCardBig
+              <TeamCard
                 key={teamMember.name}
                 name={teamMember.name}
                 designation={teamMember.designation}
@@ -35,7 +35,7 @@ import Layout from "../layout/Layout.astro";
           team
             .slice(4, 8)
             .map((teamMember, mem) => (
-              <TeamCardBig
+              <TeamCard
                 key={teamMember.name}
                 name={teamMember.name}
                 designation={teamMember.designation}
@@ -54,7 +54,7 @@ import Layout from "../layout/Layout.astro";
           team
             .slice(8)
             .map((teamMember, mem) => (
-              <TeamCardBig
+              <TeamCard
                 key={teamMember.name}
                 name={teamMember.name}
                 designation={teamMember.designation}
