@@ -72,25 +72,18 @@ import Layout from "../layout/Layout.astro";
             </div>
         </a>
     </div>
-<button id="up-arrow" class="arrow-button absolute right-16 text-white bg-gray-800 py-2 rounded-full">▲</button>
-    <button id="down-arrow" class="arrow-button absolute right-16 text-white bg-gray-800 py-2 rounded-full">▼</button>
   </div>
 
-  <script>
+ <script>
     document.addEventListener('DOMContentLoaded', () => {
       const rows = document.querySelectorAll('.team-row');
       let currentIndex = 0;
-
-      const upArrow = document.getElementById('up-arrow');
-      const downArrow = document.getElementById('down-arrow');
-
 
       function highlightRow(index) {
         rows.forEach((row, i) => {
           if (i === index) {
             row.classList.add('highlight');
-                    row.classList.remove('dim');
-
+            row.classList.remove('dim');
             row.scrollIntoView({ behavior: 'smooth', block: 'center' });
           } else {
             row.classList.remove('highlight');
@@ -99,41 +92,61 @@ import Layout from "../layout/Layout.astro";
         });
       }
 
-      upArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex -= 1;
-          highlightRow(currentIndex);
-        }
-      });
-
-      downArrow.addEventListener('click', () => {
-        if (currentIndex < rows.length - 1) {
-          currentIndex += 1;
-          highlightRow(currentIndex);
-        }
-      });
-
-      // Initial state
       highlightRow(currentIndex);
+
+          // Scroll handling for desktop
+    function handleDesktopScroll() {
+      let newIndex = currentIndex;
+      rows.forEach((row, i) => {
+        const rect = row.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+          newIndex = i;
+        }
+      });
+      if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        highlightRow(currentIndex);
+      }
+    }
+
+    // Scroll handling for mobile
+    function handleMobileScroll() {
+      let newIndex = currentIndex;
+      const viewportHeight = window.innerHeight;
+      rows.forEach((row, i) => {
+        const rect = row.getBoundingClientRect();
+        const rowCenter = (rect.top + rect.bottom) / 2;
+        if (rowCenter >= 0 && rowCenter <= viewportHeight) {
+          newIndex = i;
+        }
+      });
+      if (newIndex !== currentIndex) {
+        currentIndex = newIndex;
+        highlightRow(currentIndex);
+      }
+    }
+
+    // Add scroll listener based on screen size
+    const mediaQuery = window.matchMedia('(max-width: 1024px)');
+    if (mediaQuery.matches) {
+      window.addEventListener('scroll', handleMobileScroll, { passive: true });
+    } else {
+      window.addEventListener('scroll', handleDesktopScroll, { passive: true });
+    }
+
+    // Add event listener to handle changes in screen size
+    mediaQuery.addListener((e) => {
+      if (e.matches) {
+        window.removeEventListener('scroll', handleDesktopScroll);
+        window.addEventListener('scroll', handleMobileScroll, { passive: true });
+      } else {
+        window.removeEventListener('scroll', handleMobileScroll);
+        window.addEventListener('scroll', handleDesktopScroll, { passive: true });
+      }
     });
-  </script>
-
+  });
+</script>
   <style>
-    .arrow-button {
-      width: 64px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-    }
-    
-    .arrow-button:hover {
-      background-color: #444;
-    }
-
     .highlight {
       opacity: 1;
       transition: opacity 0.3s ease;
@@ -142,16 +155,6 @@ import Layout from "../layout/Layout.astro";
     .dim {
       opacity: 0.3;
       transition: opacity 0.3s ease;
-    }
-
-    #up-arrow {
-        top: 102%;
-      transform: translateY(-50%);
-    }
-
-    #down-arrow {
-      top: 104%;
-      transform: translateY(50%);
     }
   </style>
 </Layout>
