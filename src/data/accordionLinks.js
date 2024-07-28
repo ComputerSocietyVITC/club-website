@@ -1,11 +1,11 @@
-const instagram = "/public/socialmedia/instagram.webp";
-const github = "/public/socialmedia/github.webp";
-const linkedin = "/public/socialmedia/linkedin.webp";
-const discord = "/public/socialmedia/discord.webp";
-const youtube = "/public/socialmedia/youtube.webp";
-const twitter = "/public/socialmedia/twitter.webp";
-const telegram = "/public/socialmedia/telegram.webp";
-const devto = "/public/socialmedia/devto.webp";
+const instagram = "/socialmedia/instagram.webp";
+const github = "/socialmedia/github.webp";
+const linkedin = "/socialmedia/linkedin.webp";
+const discord = "/socialmedia/discord.webp";
+const youtube = "/socialmedia/youtube.webp";
+const twitter = "/socialmedia/twitter.webp";
+const telegram = "/socialmedia/telegram.webp";
+const devto = "/socialmedia/devto.webp";
 
 const accordionLinks = [
   {
