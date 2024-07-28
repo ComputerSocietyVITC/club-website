@@ -75,7 +75,7 @@ export const items = [
                   <img
                     src={link.icon}
                     alt={link.platform}
-                    className="h-7 my-5 "
+                    className="h-7 my-5"
                   />
                 </a>
               </div>

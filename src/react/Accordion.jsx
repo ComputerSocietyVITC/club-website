@@ -10,7 +10,7 @@ const Accordion = () => {
 
   return (
     <div className="flex justify-center w-full">
-      <div className="text-white flex flex-col items-center w-full max-w-3xl">
+      <div className="text-white flex flex-col items-center w-full max-w-3xl mx-8">
         {items.map((item, index) => {
           return (
             <div
