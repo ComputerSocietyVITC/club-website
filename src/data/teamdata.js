@@ -73,13 +73,6 @@ const team = [
     gitUrl: "https://github.com/sam-shervin",
   },
   {
-    name: "Shashwat Mishra",
-    designation: "Projects Head",
-    imageUrl: image,
-    linkUrl: "",
-    gitUrl: "https://github.com/Shashwatm74",
-  },
-  {
     name: "Aditya Jyoti",
     designation: "Joint General Secretary",
     imageUrl:
